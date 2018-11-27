@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleSelect(cat) {
-      this.selected = cat;
+      this.selected = cat === this.selected ? null : cat;
     }
   }
 };
@@ -42,4 +42,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

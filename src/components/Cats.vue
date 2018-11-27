@@ -35,6 +35,7 @@ export default {
   border: 2px solid pink;
 }
 
+
 .cat.selected {
   background: lightsteelblue;
 }
