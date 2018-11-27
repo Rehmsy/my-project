@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Cats
+      v-bind:cats="cats"
+      v-bind:selected="selected"
+      v-bind:onSelect="handleSelect"/>
+    <Playa
+      v-bind:cat="selected"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Cats from './components/Cats';
+import Playa from './components/Playa';
+import cats from './cat-data.js';
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      cats,
+      selected: null
+    };
+  },
   components: {
-    HelloWorld
+    Cats,
+    Playa
+  },
+  methods: {
+    handleSelect(cat) {
+      this.selected = cat;
+    }
   }
-}
+};
 </script>
 
 <style>
